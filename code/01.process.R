@@ -33,9 +33,9 @@ frac = read.table("../Est.prop.new_5cells_48inRefs_decon_416inBulk_reID.txt", ro
 frac = as.matrix(frac)
 
 ## reference
-sc_ref <- readMM("/proj/yunligrp/users/jwen/snRNA/filtered_count_matrix.mtx")
-rownames(sc_ref) <- readLines("/proj/yunligrp/users/jwen/snRNA/filtered_gene_row_names.txt")
-sc_meta = fread("/proj/yunligrp/users/jwen/snRNA/filtered_column_metadata.txt", header = T)
+sc_ref <- readMM("filtered_count_matrix.mtx")
+rownames(sc_ref) <- readLines("filtered_gene_row_names.txt")
+sc_meta = fread("filtered_column_metadata.txt", header = T)
 sc_meta = as.data.frame(sc_meta)
 
 index = rownames(sc_ref) %in% rownames(bulk)
